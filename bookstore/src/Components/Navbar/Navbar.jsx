@@ -4,14 +4,23 @@ import download from "../Assets/download.png";
 import { FaSearch } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div className="Navbar">
-        <div className="links">
-            <a href="/">Home</a>
-            <a href="create">Home</a>
-        </div>
+      <div className="links">
+        <Link to="/">Home</Link>
+        <Link to="/books">Books</Link>
+        <Link to='/contact'>Contact</Link>
+        <Link to='/admin'>Admin Panel</Link>
+      </div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/books">Books</Link>
+        <Link to='/Contact'>Contact</Link>
+        <Link to='/admin'>Admin Panel</Link>
+      </nav>
       <div className="nav--top">
         <div className="nav-top-left">
           <img src={download} alt="" className="logo" />
@@ -26,10 +35,10 @@ function Navbar() {
       </div>
       <div className="nav--mid">
         <ul>
-          <li>Home</li>
-          <li>Books</li>
-          <li>contact</li>
-          <li>Admin Panel</li>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/books'>Books</Link></li>
+          <li><Link to='/contact'></Link>contact</li>
+          <li><Link to='/admin'></Link>Admin Panel</li>
           <div className="input-form">
             <FaSearch className="search" />
             <input type="text" placeholder="Find your articles" />
@@ -37,8 +46,8 @@ function Navbar() {
         </ul>
 
         <ul>
-          <li>Help</li>
-          <li>Find Your Country</li>
+          <li><Link to='/help'></Link>Help</li>
+          <li><Link to='/country-selector'></Link>Find Your Country</li>
         </ul>
       </div>
       <div className="nav--bottom">
@@ -55,10 +64,9 @@ function Navbar() {
           <p className="frenq"> A Cowrie Of Hope </p>
           <p className="frenq"> Alien Woman </p>
         </div>
-            
       </div>
     </div>
-  );
+ );
 }
 
 export default Navbar;
